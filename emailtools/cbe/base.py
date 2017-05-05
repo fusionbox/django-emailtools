@@ -1,7 +1,7 @@
 from functools import update_wrapper
 
-from django.utils.decorators import classonlymethod
 from django.core.exceptions import ImproperlyConfigured
+from django.utils.decorators import classonlymethod
 
 
 class BaseEmail(object):

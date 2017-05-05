@@ -1,8 +1,13 @@
+from django import VERSION as DJANGO_VERSION
 from django.contrib.auth.tokens import default_token_generator
 from django.core.exceptions import ImproperlyConfigured
-from django.core.urlresolvers import reverse
 from django.template import loader
 from django.utils.http import int_to_base36
+
+if DJANGO_VERSION[:2] in ((1, 6), (1, 7), (1, 8)):
+    from django.core.urlresolvers import reverse
+else:
+    from django.urls import reverse
 
 
 class TemplateEmailMixin(object):

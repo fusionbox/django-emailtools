@@ -1,10 +1,10 @@
 import markdown
 
-from django.template import loader
-from django.core.mail import EmailMessage, EmailMultiAlternatives
 from django.conf import settings
-from django.utils.html import strip_tags
 from django.core.exceptions import ImproperlyConfigured
+from django.core.mail import EmailMessage, EmailMultiAlternatives
+from django.template import loader
+from django.utils.html import strip_tags
 from django.utils.safestring import mark_safe
 
 from .base import BaseEmail
