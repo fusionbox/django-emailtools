@@ -4,6 +4,7 @@ from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.core.mail import EmailMessage, EmailMultiAlternatives
 from django.template import loader
+from django.utils import six
 from django.utils.html import strip_tags
 from django.utils.safestring import mark_safe
 
@@ -45,7 +46,7 @@ class BasicEmail(BaseEmail):
     def get_to(self):
         if self.to is None:
             raise ImproperlyConfigured('No `to` provided')
-        if isinstance(self.to, basestring):
+        if isinstance(self.to, six.string_types):
             return [self.to]
         return self.to
 
@@ -114,7 +115,10 @@ class MarkdownEmail(HTMLEmail):
         if self.layout_template is None:
             if getattr(settings, 'EMAIL_LAYOUT', None) is not None:
                 return settings.EMAIL_LAYOUT
-            raise ImproperlyConfigured('layout was not defined by settings.EMAIL_LAYOUT and none was provided')
+            raise ImproperlyConfigured(
+                'layout was not defined by settings.EMAIL_LAYOUT '
+                'and none was provided'
+            )
         return [self.layout_template]
 
     def get_layout_context_data(self, **kwargs):
@@ -126,7 +130,10 @@ class MarkdownEmail(HTMLEmail):
             self.get_layout_template(),
             self.get_layout_context_data(
                 content=mark_safe(
-                    markdown.markdown(md, extensions=['markdown.extensions.extra']),
+                    markdown.markdown(
+                        md,
+                        extensions=['markdown.extensions.extra']
+                    ),
                 ),
             ),
         )
