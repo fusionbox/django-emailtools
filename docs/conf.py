@@ -45,8 +45,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'django-emailtools'
-copyright = u'2013, Fusionbox, Inc.'
+project = u'django-emailtools-reloaded'
+copyright = u'2013-2017 Fusionbox, Inc., 2017-present Artur Barseghyan'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -172,7 +172,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'django-emailtoolsdoc'
+htmlhelp_basename = 'django-emailtool-reloadedsdoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -191,8 +191,8 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-    ('index', 'django-emailtools.tex', u'django-emailtools Documentation',
-     u'Fusionbox, Inc.', 'manual'),
+    ('index', 'django-emailtools-reloaded.tex', u'django-emailtools-reloaded Documentation',
+     u'Artur Barseghyan', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -221,8 +221,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'django-emailtools', u'django-emailtools Documentation',
-     [u'Fusionbox, Inc.'], 1)
+    ('index', 'django-emailtools-reloaded', u'django-emailtools-reloaded Documentation',
+     [u'Artur Barseghyan'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -235,8 +235,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    ('index', 'django-emailtools', u'django-emailtools Documentation',
-     u'Fusionbox, Inc.', 'django-emailtools', 'Tools to assist in sending email from your Django app.',
+    ('index', 'django-emailtools-reloaded', u'django-emailtools-reloaded Documentation',
+     u'Artur Barseghyan', 'django-emailtools-reloaded', 'Tools to assist in sending email from your Django app.',
      'Miscellaneous'),
 ]
 
@@ -253,5 +253,5 @@ texinfo_documents = [
 #texinfo_no_detailmenu = False
 
 intersphinx_mapping = {
-    'django': ('https://docs.djangoproject.com/en/1.5/', 'https://docs.djangoproject.com/en/1.5/_objects/'),
+    'django': ('https://docs.djangoproject.com/en/1.8/', 'https://docs.djangoproject.com/en/1.8/_objects/'),
 }

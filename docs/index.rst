@@ -17,11 +17,11 @@ Contents:
 Development
 -----------
 
-Development for django-emailtools happens on `GitHub
-<https://github.com/fusionbox/django-emailtools>`_. Pull requests are welcome.
+Development for django-emailtools-reloaded happens on `GitHub
+<https://github.com/barseghyanartur/django-emailtools-reloaded>`_. Pull requests are welcome.
 Continuous integration is hosted on `Travis CI
-<https://travis-ci.org/fusionbox/django-emailtools>`_.
+<https://travis-ci.org/barseghyanartur/django-emailtools-reloaded>`_.
 
-.. image:: https://travis-ci.org/fusionbox/django-emailtools.png
-   :target: http://travis-ci.org/fusionbox/django-emailtools
+.. image:: https://travis-ci.org/barseghyanartur/django-emailtools-reloaded.png
+   :target: http://travis-ci.org/barseghyanartur/django-emailtools-reloaded
    :alt: Build Status

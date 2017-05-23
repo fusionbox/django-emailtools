@@ -11,13 +11,17 @@ Ultimately, the goal of class-based emails is to
 Installation
 ------------
 
-1.  Install the package::
+1.  Install the package:
 
-        $ pip install django-emailtools
+    .. code-block:: sh
 
-    Or you can install it from source::
+        pip install django-emailtools
 
-        $ pip install -e git://github.com/fusionbox/django-emailtools@master#egg=django-emailtools-dev
+    Or you can install it from source:
+
+    .. code-block:: sh
+
+        pip install https://github.com/barseghyanartur/django-emailtools-reloaded/archive/master.zip
 
 2.  Add ``emailtools`` to your ``INSTALLED_APPS``.
 
@@ -29,10 +33,10 @@ Write your email class and instantiate your email callable.
 
 .. code-block:: python
 
-   # app/emails.py
-   from emailtools import BasicEmail
+    # app/emails.py
+    from emailtools import BasicEmail
 
-   class WelcomeEmail(BasicEmail):
+    class WelcomeEmail(BasicEmail):
         from_email = 'admin@example.com'
         subject = 'Welcome to example.com'
         template_name = 'welcome_email.html'
@@ -45,7 +49,7 @@ Write your email class and instantiate your email callable.
             kwargs['email_address'] = self.args[0]
             return kwargs
 
-   send_welcome_email = WelcomeEmail.as_callable()
+    send_welcome_email = WelcomeEmail.as_callable()
 
 Write you email template.
 
@@ -66,17 +70,17 @@ And to send the email.
 
 .. code-block:: python
 
-   >>> from app.emails import send_welcome_email
-   >>> send_welcome_email('joe.smith@example.com')  # Sends the email
+    from app.emails import send_welcome_email
+    send_welcome_email('joe.smith@example.com')  # Sends the email
 
 Or if you wanted to do something with the message before you sent it:
 
 
 .. code-block:: python
 
-   >>> from myapp.emails import WelcomeEmail
-   >>> email_instance = WelcomeEmail
-   >>> message = email_instance.get_email_message()
-   >>> message
-   <django.core.mail.message.EmailMultiAlternatives at 0x10668d150>
-   >>> message.send()  # Sends the email.
+    from myapp.emails import WelcomeEmail
+    email_instance = WelcomeEmail
+    message = email_instance.get_email_message()
+    message
+    <django.core.mail.message.EmailMultiAlternatives at 0x10668d150>
+    message.send()  # Sends the email.
