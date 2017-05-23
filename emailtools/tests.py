@@ -52,7 +52,7 @@ class TestBasicCBE(TestCase):
     def test_to(self):
         self.create_and_send_a_message()
         message = mail.outbox[0]
-        for k, v in self.EMAIL_ATTRS.iteritems():
+        for k, v in self.EMAIL_ATTRS.items():
             self.assertEqual(getattr(message, k), v)
         self.assertEqual(message.bcc, [])
         self.assertEqual(message.cc, [])

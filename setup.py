@@ -14,7 +14,7 @@ def read(fname):
 
 
 install_requires = [
-    'Django>=1.3',
+    'Django>=1.6',
     'markdown',
 ]
 
@@ -34,17 +34,17 @@ def get_version():
     elif stage == 'alpha':
         process = subprocess.Popen('git rev-parse HEAD'.split(), stdout=subprocess.PIPE)
         stdout, stderr = process.communicate()
-        return number + '-' + stdout.strip()[:8]
+        return number + '-' + str(stdout.strip())[:8]
 
 setup(
-    name='django-emailtools',
+    name='django-emailtools-reloaded',
     version=get_version(),
     description=__doc__,
     long_description=read('README.rst'),
     packages=[package for package in find_packages() if package.startswith('emailtools')],
-    url="https://django-emailtools.readthedocs.org/en/latest/",
-    author="Fusionbox",
-    author_email='programmers@fusionbox.com',
+    url="https://github.com/barseghyanartur/django-emailtools-reloaded",
+    author="Artur Barseghyan",
+    author_email='artur.barseghyan@gmail.com',
     install_requires=install_requires,
     zip_safe=False,
     include_package_data=True,

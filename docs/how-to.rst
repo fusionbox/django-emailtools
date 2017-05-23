@@ -66,7 +66,8 @@ does this in the built in :class:`PasswordResetForm` packaged with
 
 Given a valid email address, the password reset form does the following.
 
-1.  Lookup all users with that email address, skipping users who have unusable passwords.
+1.  Lookup all users with that email address, skipping users who have unusable
+    passwords.
 2.  Figure out the domain, site information, and other context data.
 3.  Render the password reset template.
 4.  Send the password reset email(s).

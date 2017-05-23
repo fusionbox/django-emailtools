@@ -1,3 +1,14 @@
+0.2.3 (2017-05-05)
+------------------
+Re-branded as `django-email-tools-reloaded`, since original package author
+didn't have time to maintain the package and wasn't willing to grant
+access to the PyPI.
+
+- Python 3 support.
+- Reworked test settings, sorted imports, updated tox for compatibility with
+  Django 1.8, 1.9, 1.10 and 1.11.
+- Drop support for Python 2.6.
+
 0.2.2 (2014-07-04)
 ------------------
 

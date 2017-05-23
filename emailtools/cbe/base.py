@@ -1,7 +1,7 @@
 from functools import update_wrapper
 
-from django.utils.decorators import classonlymethod
 from django.core.exceptions import ImproperlyConfigured
+from django.utils.decorators import classonlymethod
 
 
 class BaseEmail(object):
@@ -26,7 +26,9 @@ class BaseEmail(object):
         return self.email_message_class
 
     def get_email_message(self):
-        return self.get_email_message_class()(**self.get_email_message_kwargs())
+        return self.get_email_message_class()(
+            **self.get_email_message_kwargs()
+        )
 
     def get_send_kwargs(self, **kwargs):
         return kwargs
@@ -47,7 +49,9 @@ class BaseEmail(object):
                                 "already attributes of the "
                                 "class.".format(cls.__name__, key))
 
-        EmailClass = type("Callable{0}".format(cls.__name__), (cls,), initkwargs)
+        EmailClass = type("Callable{0}".format(cls.__name__),
+                          (cls,),
+                          initkwargs)
 
         def callable(*args, **kwargs):
             self = EmailClass(*args, **kwargs)

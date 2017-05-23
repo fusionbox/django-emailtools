@@ -25,7 +25,8 @@ BaseEmail
 
     .. method:: get_email_message_kwargs()
 
-        Constructs and returns the ``kwargs`` that will be used to instantiate the email message.
+        Constructs and returns the ``kwargs`` that will be used to instantiate
+        the email message.
 
     .. method:: get_email_message()
 
@@ -33,8 +34,8 @@ BaseEmail
 
     .. method:: get_send_kwargs(**kwargs)
 
-        Construct and returns the ``kwargs`` that will be passed to the ``send`` method of
-        the instantaited email message.
+        Construct and returns the ``kwargs`` that will be passed to
+        the ``send`` method of the instantiated email message.
 
     .. method:: send()
 
@@ -63,7 +64,8 @@ BasicEmail
 
     .. attribute:: ``subject``
 
-        Static property to be used as the ``subject`` attribute for the email message.
+        Static property to be used as the ``subject`` attribute for the email
+        message.
 
     .. attribute:: ``to``
 
@@ -71,19 +73,23 @@ BasicEmail
 
     .. attribute:: ``cc``
 
-        Static property to be used as the ``cc`` attribute for the email message.
+        Static property to be used as the ``cc`` attribute for the email
+        message.
 
     .. attribute:: ``bcc``
 
-        Static property to be used as the ``bcc`` attribute for the email message.
+        Static property to be used as the ``bcc`` attribute for the email
+        message.
 
     .. attribute:: ``from_email``
 
-        Static property to be used as the ``from_email`` attribute for the email message.
+        Static property to be used as the ``from_email`` attribute for the
+        email message.
 
     .. attribute:: ``body``
 
-        Static property to be used as the ``body`` attribute for the email message.
+        Static property to be used as the ``body`` attribute for the email
+        message.
 
     .. attribute:: ``connection``
 
@@ -92,7 +98,8 @@ BasicEmail
 
     .. attribute:: ``attachments``
 
-        Static property to be used for the ``attachments`` of the email message.
+        Static property to be used for the ``attachments`` of the email
+        message.
 
     .. attribute:: ``headers``
 
@@ -105,7 +112,8 @@ BasicEmail
 
     .. method:: ``get_to``
 
-        Returns the list of email addresses the email addresses should be sent to.
+        Returns the list of email addresses the email addresses should be
+        sent to.
 
     .. method:: ``get_cc``
 
@@ -145,7 +153,8 @@ HTMLEmail
 
     .. attribute:: template_name
 
-        Path to the template that should be used for rendering the body of the message.
+        Path to the template that should be used for rendering the body of the
+        message.
 
     .. method:: get_context_data(**kwargs)
 
